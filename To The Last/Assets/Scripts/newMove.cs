@@ -16,7 +16,10 @@ public class newMove : MonoBehaviour
     private bool isSlowed;
     private bool isSliding;
     public float slowFac;
-    public float slideSpeedMultiplier;
+    [SerializeField]
+    private float baseSlideVal;
+    private float slideForce;
+    private float slideTime = 3.5f;
     
     // Start is called before the first frame update
     void Start()
@@ -88,19 +91,24 @@ public class newMove : MonoBehaviour
                 }
             }
         }
-        if(isSliding)
+        if (isSliding)
         {
-            //rb.MovePosition(transform.position + (transform.forward * Input.GetAxis("Vertical") * moveSpeed*slideSpeedMultiplier) + (Input.GetAxis("Horizontal") * moveSpeed * transform.right*slideSpeedMultiplier));
-            Vector3 slideForce = transform.forward * slideSpeedMultiplier;
-            rb.AddForce(slideForce);
+
+            //rb.MovePosition(transform.position + (transform.forward * Input.GetAxis("Vertical") * moveSpeed) + (Input.GetAxis("Horizontal") * moveSpeed * transform.right));
+            rb.AddForce(transform.forward * slideForce);
+            
+              slideForce = slideForce * -Mathf.Exp(2);
+              Debug.Log(slideForce);
+ 
         }
-        else 
+        else
         {
             rb.MovePosition(transform.position + (transform.forward * Input.GetAxis("Vertical") * moveSpeed) + (Input.GetAxis("Horizontal") * moveSpeed * transform.right));
             if (Input.GetButtonDown("Jump") && isGrounded)
             {
                 rb.AddForce(transform.up * jumpForce);
             }
+            slideForce = baseSlideVal;
         }
 
         rb.MoveRotation(rb.rotation * Quaternion.Euler(new Vector3(0, Input.GetAxis("Mouse X") * sensitivity, 0)));
@@ -116,6 +124,7 @@ public class newMove : MonoBehaviour
         
         if (collision.gameObject.tag == "Wall")
         {
+            rb.useGravity = false;
             isWallRunning = true;
         }
     }
