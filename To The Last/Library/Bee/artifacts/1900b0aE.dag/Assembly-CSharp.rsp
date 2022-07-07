@@ -340,12 +340,14 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.VSCode.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
-"Assets/Scripts/AI.cs"
+"Assets/Scripts/AI Scripts/AI.cs"
+"Assets/Scripts/AI Scripts/Enemies.cs"
+"Assets/Scripts/AI Scripts/FOVCheck.cs"
+"Assets/Scripts/AI Scripts/Node.cs"
+"Assets/Scripts/AI Scripts/Patrol.cs"
+"Assets/Scripts/AI Scripts/Sequence.cs"
+"Assets/Scripts/AI Scripts/Tree.cs"
 "Assets/Scripts/newMove.cs"
-"Assets/Scripts/Node.cs"
-"Assets/Scripts/Patrol.cs"
-"Assets/Scripts/Sequence.cs"
-"Assets/Scripts/Tree.cs"
 -langversion:9.0
 
 /deterministic

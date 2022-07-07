@@ -5,6 +5,7 @@ using UnityEngine;
 using BehaviourTree;
 public class Patrol : Node
 {
+    Enemies enemy;
     private Transform transform;
     private Transform[] path;
     
