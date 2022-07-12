@@ -343,6 +343,7 @@
 "Assets/Scripts/AI Scripts/AI.cs"
 "Assets/Scripts/AI Scripts/Enemies.cs"
 "Assets/Scripts/AI Scripts/FOVCheck.cs"
+"Assets/Scripts/AI Scripts/GoToPlayer.cs"
 "Assets/Scripts/AI Scripts/Node.cs"
 "Assets/Scripts/AI Scripts/Patrol.cs"
 "Assets/Scripts/AI Scripts/Sequence.cs"

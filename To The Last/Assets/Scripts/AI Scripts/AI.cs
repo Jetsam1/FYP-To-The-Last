@@ -1,18 +1,39 @@
-
+using System.Collections;
 using System.Collections.Generic;
+
 using BehaviourTree;
 
-enemyType type;
+
 public class AI : Tree
 {
 
-    enemyType type;
+      public enemyType type;
     // Start is called before the first frame update
     public UnityEngine.Transform[] path;
-    static public float speed = 5;  
+    
+    static public float speed = 5f;
+    static public float FOVrange = 15.0f;
     protected override Node SetupTree()
     {
-        Node root = new Patrol(transform, path);
+         Node root = new Selector(new List<Node>
+         {
+             new Sequence(new List<Node>
+             { 
+                  new FOVCheck(transform),
+                  new GoToPlayer(transform),
+
+             }),
+             new Patrol(transform,path),
+
+
+     });
+       
+
+       // Node root = new Sequence(new List<Node>
+       // {
+       //     new FOVCheck(transform),
+       //     new GoToPlayer(transform),
+       // });
         return root;
     }
 }

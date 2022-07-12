@@ -34,7 +34,7 @@ public class newMove : MonoBehaviour
         if (Physics.Raycast(transform.position, Vector3.down, out raycast, 1.25f))
         {
             isGrounded = true;
-            Debug.Log("ray hit floor");
+          //  Debug.Log("ray hit floor");
         }
         if (!Physics.Raycast(transform.position, Vector3.down, out raycast, 1.25f))
         {
@@ -43,12 +43,12 @@ public class newMove : MonoBehaviour
         if (Physics.Raycast(transform.position, Vector3.left, out raycast, 1.25f))// && Input.GetButtonDown("Left"))
         {
            // isWallRunning = true;
-            Debug.Log("ray left");
+          ///  Debug.Log("ray left");
         }
         if (Physics.Raycast(transform.position, Vector3.right, out raycast, 1.25f))// && Input.GetButtonDown("Right"))
         {
            // isWallRunning = true;
-            Debug.Log("ray right");
+          //  Debug.Log("ray right");
         }
     }
     // Update is called once per frame

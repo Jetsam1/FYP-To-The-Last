@@ -46,6 +46,7 @@ public class Patrol : Node
             else
             {
                 transform.position = Vector3.MoveTowards(transform.position, waypoint.position, Time.deltaTime * AI.speed);
+               
                 transform.LookAt(waypoint.position);
             }
         }
