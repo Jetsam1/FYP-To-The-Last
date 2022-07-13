@@ -8,6 +8,7 @@ TagManager:
   - Ground
   - melee
   - shield
+  - Hazard
   layers:
   - Default
   - TransparentFX

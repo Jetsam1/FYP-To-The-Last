@@ -7,7 +7,7 @@ public class newMove : MonoBehaviour
     public Rigidbody rb;
     public float sensitivity;
     [SerializeField]
-    private float moveSpeed;
+    public float moveSpeed;
     [SerializeField]
     private float jumpForce;
     private bool isGrounded;

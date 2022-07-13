@@ -17,7 +17,7 @@ public class GoToPlayer : Node
     {
         Transform target = (Transform)getData("target");
 
-        if (Vector3.Distance(transform.position, target.position) > 0.0001f)
+        while (Vector3.Distance(transform.position, target.position) > 0.01f)
         {
             transform.position = Vector3.MoveTowards(transform.position, target.position, AI.speed * Time.deltaTime);
             transform.LookAt(target.position);

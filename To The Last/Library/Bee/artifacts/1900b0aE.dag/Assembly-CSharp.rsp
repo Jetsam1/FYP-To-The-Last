@@ -348,7 +348,10 @@
 "Assets/Scripts/AI Scripts/Patrol.cs"
 "Assets/Scripts/AI Scripts/Sequence.cs"
 "Assets/Scripts/AI Scripts/Tree.cs"
+"Assets/Scripts/Checkpoint.cs"
+"Assets/Scripts/Hazards/Hazards.cs"
 "Assets/Scripts/newMove.cs"
+"Assets/Scripts/PlayerManager.cs"
 -langversion:9.0
 
 /deterministic
