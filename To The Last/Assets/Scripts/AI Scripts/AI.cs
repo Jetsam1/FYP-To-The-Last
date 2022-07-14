@@ -7,7 +7,7 @@ using BehaviourTree;
 public class AI : Tree
 {
 
-      public enemyType type;
+    public EnemyManager manager;
     // Start is called before the first frame update
     public UnityEngine.Transform[] path;
     

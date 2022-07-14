@@ -8,6 +8,8 @@ public class PlayerManager : MonoBehaviour
     PlayerStats stats;
     newMove ms;
     bool isDead;
+    float currentHP;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,10 +31,30 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
+    private void regen()
+    {
+        if (currentHP<stats.hp)
+        {
+            for (float i = currentHP; currentHP < stats.hp; i++)
+            {
+                Invoke("addHP", 0.5f);
+            }
+        }
+    }
+    private void addHP()
+    {
+        currentHP += stats.regenRate;
+    }
     // Update is called once per frame
     void Update()
     {
         stats.speed = ms.moveSpeed;
+
+        if(currentHP <stats.hp)
+        {
+            Invoke("regen",3);
+        }
+
     }
 }
 
@@ -43,6 +65,7 @@ public class PlayerStats
     public float hp;
     public float speed;
     public float baseDamage;
+    public float regenRate;
     public playerClass pc;
 
 
